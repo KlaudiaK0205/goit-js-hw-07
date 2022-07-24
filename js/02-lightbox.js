@@ -3,16 +3,16 @@ import { galleryItems } from './gallery-items.js';
 
 const gallery = document.querySelector(".gallery");
 
-const newGalleryItem = galleryItems.map((galleryItems) => `<div class="gallery__item">
-    <a class="gallery__link" href="${galleryItems.original}" >
-    <img
-        class="gallery__image"
-        src="${galleryItems.preview}"
-        data-source="${galleryItems.original}"
-        alt="${galleryItems.description}"/>
-    </a></div>`).join("");
+const newGalleryItem = galleryItems.map((galleryItems) => `<a class="gallery__item" href="${galleryItems.original}" >
+<img
+  class="gallery__image"
+  src="${galleryItems.preview}"
+  alt="${galleryItems.description}"
+  title="${galleryItems.description}"
+/>
+</a>`).join("");
 
-gallery.innerHTML = newGalleryItem;
+gallery.insertAdjacentHTML("afterbegin", newGalleryItem);
 
 new SimpleLightbox(".gallery a", { captionDelay: 250 });
 
