@@ -12,6 +12,21 @@ const newGalleryItem = galleryItems.map((galleryItems) => `<div class="gallery__
         alt="${galleryItems.description}"/>
     </a></div>`).join("");
 
-gallery.innerHTML = newGalleryItem;
+gallery.insertAdjacentHTML("afterbegin", newGalleryItem);
 
 // DONE
+
+// OPCJONALNE ZADANIE
+
+// import * as basicLightbox from 'basiclightbox'
+
+// const instance = basicLightbox.create(`
+//     <div class="modal">
+//         <p>
+//             Your first lightbox with just a few lines of code.
+//             Yes, it's really that simple.
+//         </p>
+//     </div>
+// `)
+
+// instance.show()
